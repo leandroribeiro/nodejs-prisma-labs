@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: poc-nodejs-prisma
+    image: postgres:10.3
+    restart: always
+    environment:
+      - POSTGRES_USER=justuser
+      - POSTGRES_PASSWORD=justpwd
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+volumes:
+  postgres:
